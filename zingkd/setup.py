@@ -6,6 +6,12 @@ here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, 'README.rst')) as f:
     README = f.read()
 
+install_requires = [
+    'cornice',
+    'waitress',
+    'sqlalchemy',
+    'zope.sqlalchemy'
+]
 
 setup(name='zingkd',
       version=0.1,
@@ -24,7 +30,7 @@ setup(name='zingkd',
       packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
-      install_requires=['cornice', 'waitress'],
+      install_requires=install_requires,
       entry_points = """\
       [paste.app_factory]
       main=zingkd:main

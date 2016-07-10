@@ -3,6 +3,7 @@
 from pyramid.config import Configurator
 
 from zingkd.contexts import RootContext
+from zingkd.models.meta import create_database_session
 
 
 def main(global_config, **settings):
@@ -32,9 +33,6 @@ def _get_db(request):
     try:
         db = registry.db
     except AttributeError:
-        db = registry.db = _create_db_session(registry.settings)
+        db = registry.db = create_database_session(registry.settings)
 
     return db
-
-def _create_db_session(settings):
-    return None
