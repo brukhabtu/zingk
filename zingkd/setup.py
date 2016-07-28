@@ -7,6 +7,7 @@ with open(os.path.join(here, 'README.rst')) as f:
     README = f.read()
 
 install_requires = [
+    'alembic'
     'cornice',
     'waitress',
     'sqlalchemy',
